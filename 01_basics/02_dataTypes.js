@@ -14,6 +14,8 @@
 
 // object 
 
+
+
 console.log(null); // object 
 console.log(undefined); // undefined 
 
