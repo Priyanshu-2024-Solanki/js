@@ -46,3 +46,31 @@ const myFunction = function() {
 // Array      --   Object 
 // Function   --   function 
 // Object     --   object 
+
+// ++++++++++++++++++++++++++++++++++++++++
+
+// Stack (Primitive) , Heap(Non-Primitive)
+// primitive -> gives copy of object in stack
+let myYoutubename = "noYouTube";
+
+let anotherName = myYoutubename;
+anotherName = "newYouTube";
+
+console.log(myYoutubename);
+console.log(anotherName);
+
+// non-primitive -> gives reference of original object in heap 
+
+let userOne = {
+    email: "nakul@gmail.com",
+    upi: "nakul@ybl",
+}
+
+let userTwo = userOne;
+
+userTwo.email = "new@gmail.com";
+
+console.log(userOne.email);
+console.log(userTwo.email);
+
+// change in both 
