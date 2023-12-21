@@ -29,3 +29,28 @@ buttons.forEach( function(button) {
   })
 });
 ```
+
+## project 2 solution
+
+```javascript
+const form = document.querySelector('form');
+// console.log(form);
+form.addEventListener('submit' , function(e) {
+  e.preventDefault();
+
+  const h = parseInt(document.querySelector('#height').value);
+  const w = parseInt(document.querySelector('#weight').value);
+  // console.log(h);
+  const r = document.querySelector('#results');
+
+  if(h==='' || h<0 || isNaN(h)) {
+    r.innerHTML = `Enter a valid height ${h}`;
+  } else if(w==='' || w<0 || isNaN(w)) {
+    r.innerHTML = `Enter a valid weight ${w}`;
+  } else {
+    const bmi = (w/((h*h)/10000)).toFixed(2);
+    // console.log(bmi);
+    r.innerHTML = `<span>${bmi}</span>`
+  }
+})
+```
