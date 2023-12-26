@@ -54,6 +54,7 @@ form.addEventListener('submit' , function(e) {
   }
 })
 ```
+
 ## project 3 solution code 
 
 ```javascript
@@ -159,3 +160,57 @@ function newGame() {
   })
 }
 ```
+
+## project 5 solution 
+
+```javascript
+const getRandomColour = function() {
+  const hex = "0123456789ABCDEF";
+  let randomColour = "#";
+  for(let i=0 ; i<6 ; i++)
+  {
+    randomColour += hex[Math.floor(Math.random()*16)];
+  }
+  return randomColour;
+}
+
+const generate = function(){
+  document.body.style.backgroundColor = getRandomColour();
+}
+
+let genId;
+document.querySelector('#start').addEventListener('click',function(){
+  genId = setInterval(generate,1000);
+})
+
+document.querySelector('#stop').addEventListener('click',function(){
+  clearInterval(genId);
+  genId = null;
+})
+```
+
+## project 6 solution 
+
+```javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown',(e) => {
+  insert.innerHTML = `
+    <div class="color"> 
+    <table>
+    <tr>
+    <th>Key</th>
+    <th>KeyCode</th>
+    <th>Code</th>
+    </tr>
+    <tr>
+    <td>${e.key === " " ? "Space" : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+    </tr>
+    </table>
+    </div>
+  `
+})
+```
+
